@@ -1,0 +1,538 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C56E903B-F745-4E12-A01B-90E915E04968}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Utility</RootNamespace>
+    <AssemblyName>Utility</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\调试输出\Utility\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>..\调试输出\Utility\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <NoWarn>1685</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\资源\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=2.1.505.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\资源\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="任务\H队列监控.cs" />
+    <Compile Include="Windows\ConsoleWindow.cs" />
+    <Compile Include="Windows\H检测权限.cs" />
+    <Compile Include="任务\H任务队列.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.ICollection[T]\ICollection[T].AddIf.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.ICollection[T]\ICollection[T].AddIfNotContains.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.ICollection[T]\ICollection[T].AddRange.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.ICollection[T]\ICollection[T].AddRangeIf.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.ICollection[T]\ICollection[T].AddRangeIfNotContains.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.ICollection[T]\ICollection[T].ContainsAll.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.ICollection[T]\ICollection[T].ContainsAny.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.ICollection[T]\ICollection[T].IsEmpty.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.ICollection[T]\ICollection[T].IsNotEmpty.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.ICollection[T]\ICollection[T].IsNotNullOrEmpty.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.ICollection[T]\ICollection[T].IsNullOrEmpty.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.ICollection[T]\ICollection[T].RemoveIf.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.ICollection[T]\ICollection[T].RemoveIfContains.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.ICollection[T]\ICollection[T].RemoveRange.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.ICollection[T]\ICollection[T].RemoveRangeIf.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.ICollection[T]\ICollection[T].RemoveRangeIfContains.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.ICollection[T]\ICollection[T].RemoveWhere.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.IDictionary[string, object]\IDictionary[string, object].ToExpando.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.IDictionary[string, string]\IDictionary[string, string].ToNameValueCollection.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.IDictionary[TKey, TValue]\IDictionary[Tkey, TValue].AddIfNotContainsKey.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.IDictionary[TKey, TValue]\IDictionary[Tkey, TValue].AddOrUpdate.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.IDictionary[TKey, TValue]\IDictionary[Tkey, TValue].ContainsAllKey.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.IDictionary[TKey, TValue]\IDictionary[Tkey, TValue].ContainsAnyKey.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.IDictionary[TKey, TValue]\IDictionary[Tkey, TValue].GetOrAdd.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.IDictionary[TKey, TValue]\IDictionary[Tkey, TValue].RemoveIfContainsKey.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.IDictionary[TKey, TValue]\IDictionary[Tkey, TValue].ToSortedDictionary.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.IEnumerable[IEnumerable[T]]\IEnumerable[IEnumerable[T]].MergeDistinctInnerEnumerable.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.IEnumerable[IEnumerable[T]]\IEnumerable[IEnumerable[T]].MergeInnerEnumerable.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.IEnumerable[T]\IEnumerable[T].ContainsAll.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.IEnumerable[T]\IEnumerable[T].ContainsAny.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.IEnumerable[T]\IEnumerable[T].ForEach.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.IEnumerable[T]\IEnumerable[T].IsEmpty.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.IEnumerable[T]\IEnumerable[T].IsNotEmpty.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.IEnumerable[T]\IEnumerable[T].IsNotNullOrEmpty.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.IEnumerable[T]\IEnumerable[T].IsNullOrEmpty.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Generic.IEnumerable[T]\IEnumerable[T].StringJoin.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.IDictionary\IDictionary.ToHashtable.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Collections\System.Collections.Specialized.NameValueCollection\NameValueCollection.ToDictionary.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Compression\GZip\System.ByteArray\ByteArray.DecompressGZip.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Compression\GZip\System.IO.FileInfo\FileInfo.CreateGZip.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Compression\GZip\System.IO.FileInfo\FileInfo.ExtractGZipToDirectory.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Compression\GZip\System.String\String.CompressGZip.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Array\Array.ClearAll.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Array\Array.WithinIndex.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Array\System.Array\Array.BinarySearch.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Array\System.Array\Array.Clear.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Array\System.Array\Array.ConstrainedCopy.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Array\System.Array\Array.Copy.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Array\System.Array\Array.IndexOf.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Array\System.Array\Array.LastIndexOf.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Array\System.Array\Array.Reverse.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Array\System.Array\Array.Sort.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Array\System.Buffer\Array.BlockCopy.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Array\System.Buffer\Array.ByteLength.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Array\System.Buffer\Array.GetByte.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Array\System.Buffer\Array.SetByte.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Object\Casting\Object.As.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Object\Casting\Object.AsOrDefault.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Object\Casting\Object.IsAssignableFrom.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Object\Chaining\Object.Chain.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Object\Cloning\Object.DeepClone.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Object\Cloning\Object.ShallowCopy.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Object\Convert\Object.To.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Object\Convert\Object.ToOrDefault.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Object\Utility\Object.ToStringSafe.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Object\ValueComparison\Object.Between.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Object\ValueComparison\Object.In.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Object\ValueComparison\Object.InRange.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Object\ValueComparison\Object.IsDBNull.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Object\ValueComparison\Object.IsDefault.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Object\ValueComparison\Object.IsNotNull.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Object\ValueComparison\Object.IsNull.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Object\ValueComparison\Object.NotIn.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.Object\ValueComparison\Object.ReferenceEquals.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.String\String.DecryptRSA.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.String\String.EncryptRSA.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.String\String.IsLike.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.String\String.IsNotNullOrEmpty.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Core\System.String\String.IsNotNullOrWhiteSpace.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Collections.Generic.IDictionary[string, object]\IDictionary[string, object].ToDbParameters.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Collections.Generic.IDictionary[string, object]\IDictionary[string, object].ToSqlParameters.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.Common.DbCommand\DbCommand.ExecuteEntities.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.Common.DbCommand\DbCommand.ExecuteEntity.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.Common.DbCommand\DbCommand.ExecuteExpandoObject.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.Common.DbCommand\DbCommand.ExecuteExpandoObjects.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.Common.DbCommand\DbCommand.ExecuteScalarAs.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.Common.DbCommand\DbCommand.ExecuteScalarAsOrDefault.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.Common.DbCommand\DbCommand.ExecuteScalarTo.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.Common.DbCommand\DbCommand.ExecuteScalarToOrDefault.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.Common.DbConnection\DbConnection.ExecuteEntities.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.Common.DbConnection\DbConnection.ExecuteEntity.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.Common.DbConnection\DbConnection.ExecuteExpandoObject.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.Common.DbConnection\DbConnection.ExecuteExpandoObjects.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.Common.DbConnection\DbConnection.ExecuteNonQuery.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.Common.DbConnection\DbConnection.ExecuteReader.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.Common.DbConnection\DbConnection.ExecuteScalar.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.ConnectionState\ConnectionState.In.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.ConnectionState\ConnectionState.NotIn.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.DataColumnCollection\DataColumnCollection.AddRange.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.DataRow\DataRow.ToEntity.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.DataRow\DataRow.ToExpandoObject.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.DataTable\DataTable.FirstRow.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.DataTable\DataTable.LastRow.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.DataTable\DataTable.ToEntities.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.DataTable\DataTable.ToExpandoObjects.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.IDataReader\IDataReader.ContainsColumn.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.IDataReader\IDataReader.ForEach.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.IDataReader\IDataReader.GetColumnNames.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.IDataReader\IDataReader.GetValueAs.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.IDataReader\IDataReader.GetValueAsOrDefault.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.IDataReader\IDataReader.GetValueTo.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.IDataReader\IDataReader.GetValueToOrDefault.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.IDataReader\IDataReader.IsDBNull.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.IDataReader\IDataReader.ToDataTable.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.IDataReader\IDataReader.ToEntities.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.IDataReader\IDataReader.ToEntity.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.IDataReader\IDataReader.ToExpandoObject.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.IDataReader\IDataReader.ToExpandoObjects.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.IDbConnection\IDbConnection.EnsureOpen.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.IDbConnection\IDbConnection.IsConnectionOpen.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.IDbConnection\IDbConnection.IsNotConnectionOpen.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.SqlClient.SqlBulkCopy\SqlBulkCopy.GetConnection.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.SqlClient.SqlBulkCopy\SqlBulkCopy.GetTransaction.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.SqlClient.SqlCommand\SqlCommand.ExecuteDataSet.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.SqlClient.SqlCommand\SqlCommand.ExecuteDataTable.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.SqlClient.SqlConnection\SqlConnection.ExecuteDataSet.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.SqlClient.SqlConnection\SqlConnection.ExecuteDataTable.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.SqlClient.SqlConnection\SqlConnection.ExecuteEntities.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.SqlClient.SqlConnection\SqlConnection.ExecuteEntity.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.SqlClient.SqlConnection\SqlConnection.ExecuteExpandoObject.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.SqlClient.SqlConnection\SqlConnection.ExecuteExpandoObjects.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.SqlClient.SqlConnection\SqlConnection.ExecuteNonQuery.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.SqlClient.SqlConnection\SqlConnection.ExecuteReader.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.SqlClient.SqlConnection\SqlConnection.ExecuteScalar.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.SqlClient.SqlConnection\SqlConnection.ExecuteScalarAs.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.SqlClient.SqlConnection\SqlConnection.ExecuteScalarTo.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.SqlClient.SqlConnection\SqlConnection.ExecuteXmlReader.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Data\System.Data.SqlClient.SqlParameterCollection\SqlParameterCollection.AddRangeWithValue.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Serialization\System.Object\Object.SerializeBinary.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Serialization\System.Object\Object.SerializeJavaScript.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Serialization\System.Object\Object.SerializeJson.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Serialization\System.Object\Object.SerializeXml.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Serialization\System.String\String.DeserializeBinary.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Serialization\System.String\String.DeserializeJavaScript.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Serialization\System.String\String.DeserializeJson.cs" />
+    <Compile Include="扩展\ExtensionMethods\Z.Serialization\System.String\String.DeserializeXml.cs" />
+    <Compile Include="扩展\HttpClient.cs" />
+    <Compile Include="扩展\SimpleComparer.cs" />
+    <Compile Include="任务\TaskQueue.cs" />
+    <Compile Include="WindowsForm\MetroButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\MetroMessageBox.cs" />
+    <Compile Include="WindowsForm\MetroMessageBoxControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\MetroMessageBoxControl.Designer.cs">
+      <DependentUpon>MetroMessageBoxControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\MetroMessageBoxProperties.cs" />
+    <Compile Include="WindowsForm\ProgressBarK.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\ProgressSpinner.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\TextBoxK.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\DataGridViewK.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\TrackBarK.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\TreeViewK.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\UserControlK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\FormK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="任务\H串行.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="扩展\HUI线程.cs" />
+    <Compile Include="任务\H线程队列.cs" />
+    <Compile Include="模式\H阈值告警.cs" />
+    <Compile Include="模式\H管道.cs" />
+    <Compile Include="通用\AspectF\AspectExtensions.cs" />
+    <Compile Include="通用\AspectF\AspectF.cs" />
+    <Compile Include="通用\AspectF\Let.cs" />
+    <None Include="通用\参考\log4net.config" />
+    <None Include="Resources\K.png" />
+    <Content Include="存储\参考\HApplicationContext.txt" />
+    <Content Include="存储\参考\HExecutionContextScope.txt" />
+    <Compile Include="WindowsForm\F对话框_确定取消.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\F对话框_确定取消.Designer.cs">
+      <DependentUpon>F对话框_确定取消.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\F对话框_确定.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\F对话框_确定.Designer.cs">
+      <DependentUpon>F对话框_确定.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\F对话框_是否.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\F对话框_是否.Designer.cs">
+      <DependentUpon>F对话框_是否.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\F空窗口.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\F空窗口.Designer.cs">
+      <DependentUpon>F空窗口.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\F等待.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\F等待.Designer.cs">
+      <DependentUpon>F等待.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\F调试窗口.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\F调试窗口.Designer.cs">
+      <DependentUpon>F调试窗口.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\FlowLayoutPanelK.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\ListViewK.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\U开关.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\U开关.Designer.cs">
+      <DependentUpon>U开关.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\U按钮_轻.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Windows\HMiniDump.cs" />
+    <Compile Include="Windows\H控制台进程.cs" />
+    <Compile Include="Windows\H检测CPU.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\U分页.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\U分页.Designer.cs">
+      <DependentUpon>U分页.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\UTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\UTab.Designer.cs">
+      <DependentUpon>UTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\U按钮.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\U窗口背景.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="模式\H对象池.cs" />
+    <Compile Include="存储\DRDB表存储.cs" />
+    <Compile Include="存储\HXML.cs" />
+    <Compile Include="存储\ID键值对存储.cs" />
+    <Compile Include="存储\ID表存储.cs" />
+    <Compile Include="存储\SQLHelper.cs" />
+    <Compile Include="存储\HGzip压缩.cs" />
+    <Compile Include="扩展\FTPServer.cs" />
+    <Compile Include="扩展\HttpSever.cs" />
+    <Compile Include="扩展\H反射.cs" />
+    <Compile Include="模式\H审批.cs" />
+    <Compile Include="Windows\H检测内存.cs" />
+    <Compile Include="Windows\H检测网络.cs" />
+    <Compile Include="Windows\H注册表.cs" />
+    <Compile Include="任务\H限时执行.cs" />
+    <Compile Include="WindowsForm\H窗口API.cs" />
+    <Compile Include="WindowsForm\U容器.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\U容器.designer.cs">
+      <DependentUpon>U容器.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\H覆盖控件.cs" />
+    <Compile Include="Windows\HWindows常量.cs" />
+    <Content Include="存储\参考\HExcel存储.txt" />
+    <Compile Include="存储\H程序配置.cs" />
+    <Compile Include="存储\H路径.cs" />
+    <Compile Include="Windows\H网络配置.cs" />
+    <Content Include="存储\参考\M自定义序列化模板.txt" />
+    <Compile Include="模式\H多事件.cs" />
+    <Compile Include="存储\H序列化.cs" />
+    <Compile Include="模式\H状态机.cs" />
+    <Compile Include="扩展\H字节处理.cs" />
+    <Compile Include="Windows\H服务管理.cs" />
+    <Compile Include="Windows\H硬件参数.cs" />
+    <Content Include="存储\参考\HZipFile.txt">
+      <SubType>Code</SubType>
+    </Content>
+    <Compile Include="WindowsForm\U窗口头.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\U窗口头.designer.cs">
+      <DependentUpon>U窗口头.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForm\U窗体脚.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WindowsForm\U窗体脚.designer.cs">
+      <DependentUpon>U窗体脚.cs</DependentUpon>
+    </Compile>
+    <Compile Include="通用\H写文件.cs" />
+    <Compile Include="通用\H日志.cs" />
+    <Content Include="通用\参考\H容器_StructureMap.txt" />
+    <Compile Include="通用\H容器.cs" />
+    <Compile Include="通用\H调试.cs" />
+    <Compile Include="通用\M预计异常.cs" />
+    <Compile Include="通用\M验证异常.cs" />
+    <Compile Include="通用\M输入异常.cs" />
+    <Compile Include="存储\H临时存储.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="通用\H异常.cs" />
+    <Compile Include="通用\H权限.cs" />
+    <Content Include="通用\参考\H调试_log4net.txt" />
+    <Compile Include="通用\H验证输入.cs" />
+    <Content Include="WindowsForm\参考\TreeView右键菜单.txt" />
+    <Content Include="WindowsForm\参考\TreeView嵌套创建节点.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\F对话框_确定取消.resx">
+      <DependentUpon>F对话框_确定取消.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\F对话框_确定.resx">
+      <DependentUpon>F对话框_确定.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\F对话框_是否.resx">
+      <DependentUpon>F对话框_是否.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\F空窗口.resx">
+      <DependentUpon>F空窗口.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\F等待.resx">
+      <DependentUpon>F等待.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\F调试窗口.resx">
+      <DependentUpon>F调试窗口.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\MetroMessageBoxControl.resx">
+      <DependentUpon>MetroMessageBoxControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\U分页.resx">
+      <DependentUpon>U分页.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\UTab.resx">
+      <DependentUpon>UTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\U容器.resx">
+      <DependentUpon>U容器.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\U开关.resx">
+      <DependentUpon>U开关.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\U窗口头.resx">
+      <DependentUpon>U窗口头.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\U窗体脚.resx">
+      <DependentUpon>U窗体脚.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForm\U窗口背景.resx">
+      <DependentUpon>U窗口背景.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="存储\HINI.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="任务\参考\" />
+    <Folder Include="扩展\参考\" />
+    <Folder Include="模式\参考\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\..\项目--GIS客户端\省调度示例\packages\System.Data.SQLite.Core.1.0.99.0\build\net40\System.Data.SQLite.Core.targets" Condition="Exists('..\..\..\项目--GIS客户端\省调度示例\packages\System.Data.SQLite.Core.1.0.99.0\build\net40\System.Data.SQLite.Core.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
