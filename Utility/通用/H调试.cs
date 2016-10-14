@@ -71,6 +71,20 @@ namespace Utility.通用
             H日志.记录异常(__异常, __信息, __内容, __等级, __方法, __文件, __行号);
         }
 
+        /// <param name="__阈值">毫秒</param>
+        public static void 记录超时(int __阈值, Action __执行事务, string __内容 = "")
+        {
+            var __秒表 = new Stopwatch();
+            __秒表.Start();
+            __执行事务();
+            __秒表.Stop();
+            var __耗时 = (int)__秒表.Elapsed.TotalMilliseconds;
+            if (__耗时 > __阈值)
+            {
+                记录(string.Format("{0} 阈值: {1}, 耗时:{2}", __内容, __阈值, __耗时));
+            }
+        }
+
         public static void 初始化(TraceEventType __日志级别 = TraceEventType.Verbose, string __日志目录 = "日志", string __日志文件名称 = "", int __保留天数 = 30)
         {
             if (_已初始化)

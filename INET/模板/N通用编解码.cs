@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Net;
-using System.Runtime.Serialization.Formatters.Binary;
 using INET.会话;
 using INET.编解码;
 
@@ -31,7 +29,11 @@ namespace INET.模板
 
         public Dictionary<Int16, string> 通道字典 { get; set; }
 
-        public N通用编解码()
+        Dictionary<Type, string> _标识字典 = new Dictionary<Type, string>();
+
+        Dictionary<Type, Int16> _功能码字典 = new Dictionary<Type, Int16>();
+
+        protected N通用编解码()
         {
             解码消息长度 = q =>
             {
@@ -46,10 +48,15 @@ namespace INET.模板
             };
         }
 
-        public N通用编解码(Dictionary<Int16, Type> __报文字典, Dictionary<Int16, string> __通道字典)
+        public N通用编解码(Dictionary<Int16, Type> __报文字典, Dictionary<Int16, string> __通道字典) : this()
         {
             报文字典 = __报文字典;
             通道字典 = __通道字典;
+            foreach (var __kv in __报文字典)
+            {
+                _标识字典[__kv.Value] = __kv.Key.ToString("X4");
+                _功能码字典[__kv.Value] = __kv.Key;
+            }
         }
 
         public Tuple<N事务, object> 解码(byte[] 数据)
@@ -77,7 +84,7 @@ namespace INET.模板
 
         public byte[] 编码(N事务 事务, object 负载)
         {
-            var __功能码 = 获取功能码1(负载.GetType());
+            var __功能码 = _功能码字典[负载.GetType()];
             var __消息内容 = 编码(负载);
             var __消息内容长度 = 10 + __消息内容.Length;
             var __编码 = new H字段编码();
@@ -99,20 +106,7 @@ namespace INET.模板
 
         public virtual string 获取功能码(Type __负载类型)
         {
-            return 获取功能码1(__负载类型).ToString("X4");
+            return _标识字典[__负载类型];
         }
-
-        private Int16 获取功能码1(Type __负载类型)
-        {
-            foreach (var __kv in 报文字典)
-            {
-                if (__kv.Value == __负载类型)
-                {
-                    return __kv.Key;
-                }
-            }
-            throw new ApplicationException("无此类型: " + __负载类型.FullName);
-        }
-
     }
 }

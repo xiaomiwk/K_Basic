@@ -30,7 +30,7 @@ namespace INET.模板
 
         public Dictionary<string, string> 通道字典 { get; set; }
 
-        public N自描述编解码()
+        protected N自描述编解码()
         {
             解码消息长度 = q =>
             {
@@ -45,7 +45,7 @@ namespace INET.模板
             };
         }
 
-        public N自描述编解码(Dictionary<string, string> __通道字典)
+        public N自描述编解码(Dictionary<string, string> __通道字典) : this()
         {
             通道字典 = __通道字典;
         }

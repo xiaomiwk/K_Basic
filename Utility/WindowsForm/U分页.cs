@@ -145,7 +145,7 @@ namespace Utility.WindowsForm
             }
             else
             {
-                MessageBox.Show("请输入正确的页码");
+                new F对话框_确定("请输入正确的页码").ShowDialog();
             }
         }
 

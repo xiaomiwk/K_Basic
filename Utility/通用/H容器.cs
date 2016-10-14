@@ -227,16 +227,31 @@ namespace Utility.通用
 
         private static string ArrayTojson(IParameterCollection obj)
         {
+            var __结果 = new StringBuilder();
+            for (int i = 0; i < obj.Count; i++)
+            {
+                __结果.AppendFormat("{0},", SingleTojson(obj[i]));
+            }
+            if (__结果.Length > 0)
+            {
+                __结果.Remove(__结果.Length - 1, 1);
+            }
+            return __结果.ToString();
+        }
+
+        private static string SingleTojson(object obj)
+        {
+            if (obj == null)
+            {
+                return "";
+            }
+            var __delegate = obj as Delegate;
+            if (null != __delegate)
+            {
+                return string.Format("{0}.{1}", __delegate.Target, __delegate.Method);
+            }
             try
             {
-                if (obj == null)
-                {
-                    return "";
-                }
-                if (obj.Count == 1)
-                {
-                    return new JavaScriptSerializer().Serialize(obj[0]);
-                }
                 return new JavaScriptSerializer().Serialize(obj);
             }
             catch (Exception)
@@ -244,7 +259,6 @@ namespace Utility.通用
                 return obj.ToString();
             }
         }
-
     }
 
     internal static class H调用顺序

@@ -68,12 +68,13 @@ namespace INET.传输
                 catch (Exception)
                 {
                 }
-                _连接.BeginReceive(异步接收数据, null);
                 if (__接收字节 == null || __接收字节.Length == 0)
                 {
                     return;
                 }
+                H日志输出.记录(string.Format("{0}: 从 [{1}] 收", 名称, __地址), BitConverter.ToString(__接收字节));
                 On收到消息(__地址, __接收字节);
+                _连接.BeginReceive(异步接收数据, null);
             }
             catch (Exception ex)
             {
@@ -122,6 +123,7 @@ namespace INET.传输
                 {
                     _连接.EndSend(q);
                     On发送成功(__远端地址, __消息);
+                    H日志输出.记录(名称 + string.Format(": 向 [{0}] 发", __远端地址), BitConverter.ToString(__消息));
                 }
                 catch (Exception ex)
                 {

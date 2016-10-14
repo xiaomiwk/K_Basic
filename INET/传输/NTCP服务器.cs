@@ -140,7 +140,7 @@ namespace INET.传输
                 }
                 var __实际接收字节 = new byte[__实际接收长度];
                 Buffer.BlockCopy(__缓存, 0, __实际接收字节, 0, __实际接收长度);
-                //H日志输出.记录(名称 + string.Format(": 从 [{0}] 收", __客户端.节点), BitConverter.ToString(__实际接收字节));
+                H日志输出.记录(名称 + string.Format(": 从 [{0}] 收", __客户端.节点), BitConverter.ToString(__实际接收字节));
                 _IN消息分割.接收数据(__客户端.节点, __实际接收字节);
                 __数据流.BeginRead(__缓存, 0, 接收缓冲区大小, 异步接收数据, new Tuple<NetworkStream, byte[], M客户端>(__数据流, __缓存, __客户端));
             }
@@ -224,7 +224,7 @@ namespace INET.传输
                     __客户端.数据流.Write(__消息, 0, __消息.Length);
 
                     On发送成功(__客户端节点, __消息);
-                    //H日志输出.记录(名称 + string.Format(": 向 [{0}] 发", __客户端节点), BitConverter.ToString(__消息));
+                    H日志输出.记录(名称 + string.Format(": 向 [{0}] 发", __客户端节点), BitConverter.ToString(__消息));
                 }
             }
             catch (Exception ex)

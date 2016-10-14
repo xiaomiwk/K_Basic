@@ -6,6 +6,7 @@ using System.Text;
 using System.Web;
 using System.Windows.Forms;
 using Utility.Windows;
+using Utility.WindowsForm;
 
 namespace Utility.通用
 {
@@ -28,18 +29,18 @@ namespace Utility.通用
         static H异常()
         {
             HMiniDump.自动记录(() => _DotNetException);
-            提示可恢复异常 = (m, n) => MessageBox.Show(n, m, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            提示可恢复异常 = (m, n) => new F对话框_确定(n, m).ShowDialog();
             提示不可恢复异常 = (m, n) =>
             {
                 if (HttpContext.Current == null)
                 {
                     if (Debugger.IsAttached)
                     {
-                        MessageBox.Show(n, m, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        new F对话框_确定(n, m).ShowDialog();
                     }
                     else
                     {
-                        MessageBox.Show(m, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        new F对话框_确定(m, "").ShowDialog();
                     }
                 }
             };

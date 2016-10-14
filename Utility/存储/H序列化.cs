@@ -191,6 +191,13 @@ namespace Utility.存储
             return __结果;
         }
 
+
+        /// <param name="__字符串">x,x-x,x</param>
+        public static List<Tuple<int, int>> 字符串转段列表(string __字符串)
+        {
+            return 单值列表转段列表(字符串转单值列表(__字符串));
+        }
+
         public static List<Tuple<int, int>> 单值列表转段列表(List<int> __号码列表)
         {
             if (__号码列表.Count == 0)

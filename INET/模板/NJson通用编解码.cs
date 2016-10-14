@@ -20,10 +20,8 @@ namespace INET.模板
     {
         private Encoding _编码;
 
-        public NJson通用编解码(Dictionary<Int16, Type> __报文字典, Dictionary<Int16, string> __优先级字典, Encoding __编码 = null)
+        public NJson通用编解码(Dictionary<Int16, Type> __报文字典, Dictionary<Int16, string> __通道字典, Encoding __编码 = null) : base(__报文字典, __通道字典)
         {
-            报文字典 = __报文字典;
-            通道字典 = __优先级字典;
             _编码 = __编码 ?? Encoding.UTF8;
         }
 

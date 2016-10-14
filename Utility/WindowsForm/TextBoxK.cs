@@ -1,66 +1,55 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
+using System.ComponentModel;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
 namespace Utility.WindowsForm
 {
-    public class TextBoxK : TextBox
+    public partial class TextBoxK : UserControl
     {
-        public string 水印 { get; set; }
+        public override string Text { get { return this.in输入.Text; } set { this.in输入.Text = value; } }
 
-        private Color _水印颜色 = SystemColors.ControlDark;
+        public string 水印 { get { return this.out水印.Text; } set { this.out水印.Text = value; } }
 
-        public Color 水印颜色 {
-            get { return _水印颜色; }
-            set { _水印颜色 = value; }
-        }
+        public Color 水印颜色 { get { return this.out水印.ForeColor; } set { this.out水印.ForeColor = value; } }
 
-        protected override void OnVisibleChanged(EventArgs e)
+        public TextBoxK()
         {
-            base.OnVisibleChanged(e);
-            //Debug.WriteLine("OnVisibleChanged");
-            if (this.Text == "")
-            {
-                this.Text = 水印;
-            }
-            if (this.Text == 水印)
-            {
-                this.ForeColor = 水印颜色;
-            }
-            else
-            {
-                this.ForeColor = DefaultForeColor;
-            }
+            InitializeComponent();
+            水印颜色 = Color.Gray;
+            this.out水印.Enter += Out水印_Enter;
+            this.in输入.Enter += Out输入_Enter;
+            this.out水印.Leave += Out水印_Leave;
+            this.in输入.Leave += Out水印_Leave;
+            this.in输入.MultilineChanged += In输入_MultilineChanged;
         }
 
-        protected override void OnLeave(EventArgs e)
+        private void In输入_MultilineChanged(object sender, EventArgs e)
         {
-            base.OnLeave(e);
-            if (this.Text == "")
-            {
-                this.Text = 水印;
-                this.ForeColor = 水印颜色;
-            }
-            else
-            {
-                this.ForeColor = DefaultForeColor;
-            }
+            this.out水印.Multiline = this.in输入.Multiline;
         }
 
-        protected override void OnEnter(EventArgs e)
+        private void Out水印_Leave(object sender, EventArgs e)
         {
-            base.OnEnter(e);
-            if (this.Text == 水印)
+            if (string.IsNullOrEmpty(this.in输入.Text))
             {
-                this.Clear();
-                this.ForeColor = DefaultForeColor;
+                this.out水印.Visible = true;
             }
         }
 
+        private void Out水印_Enter(object sender, EventArgs e)
+        {
+            this.out水印.Visible = false;
+            this.in输入.Focus();
+        }
 
+        private void Out输入_Enter(object sender, EventArgs e)
+        {
+            this.out水印.Visible = false;
+        }
     }
 }
